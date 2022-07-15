@@ -9,4 +9,4 @@ Goal: end of day
 
 Hours	Start	End		Description
 0.2	9:00am 	9:12am		Set goals, fixed git
-0.0	9:12am 	00:00am		Light contract
+0.0	9:12am 	00:00am		Open Zeppelin, Light contract

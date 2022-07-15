@@ -6,9 +6,13 @@ export default function LightGrid() {
   for (let y = 0; y < 3; y++) {
     const row = [];
     for (let x = 0; x < 3; x++) {
-      row.push(<Light x={x} y={y} />);
+      row.push(<Light key={x} x={x} y={y} />);
     }
-    grid.push(<div className="LightRow">{row}</div>);
+    grid.push(
+      <div key={y} className="LightRow">
+        {row}
+      </div>
+    );
   }
   return (
     <div className="LightGrid">

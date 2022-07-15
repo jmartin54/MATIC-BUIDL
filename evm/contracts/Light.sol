@@ -8,11 +8,18 @@ contract Light is ERC721 {
 
   // Mapping
   struct LightInfo { 
+    bool minted;
     address owner;
     uint color;
   }
   mapping(uint => mapping(uint => mapping(uint => LightInfo))) public light;
-  
+  function getLightInfo(uint _x, uint _y, uint _z) public view returns (address owner, uint color) {
+    LightInfo memory info = light[_x][_y][_z];
+    address _owner = info.owner;
+    uint _color = info.color;
+    return (_owner, _color);
+  }
+
   // Colors
   event UpdatedColor(uint x, uint y, uint z,uint color, address updater);
   function setColor(uint _x, uint _y, uint _z,uint _color) public {
@@ -21,10 +28,11 @@ contract Light is ERC721 {
   }
 
   // Minting
-  event Minted(uint x, uint y, uint z, address minter);
+  event Minted(uint x, uint y, uint z, uint color, address minter);
   function mint(uint _x, uint _y, uint _z, uint _color, address _owner) public {
-    light[_x][_y][_z] = LightInfo(_owner, _color);
-    emit Minted(_x, _y, _z, _owner);
+    require(light[_x][_y][_z].minted == false, "Light: this NFT has already been minted");
+    light[_x][_y][_z] = LightInfo(true, _owner, _color);
+    emit Minted(_x, _y, _z, _color, _owner);
   }
 
 }

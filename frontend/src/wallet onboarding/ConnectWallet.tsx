@@ -35,8 +35,11 @@ export default function ConnectWallet({ then }: ConnectWalletProps) {
   }, []);
 
   useEffect(() => {
-    setConnected(selectedAddress != "");
-  }, [selectedAddress]);
+    (async () => {
+      const accounts = await ethereum.request({ method: "eth_accounts" });
+      setConnected(accounts.length != 0);
+    })();
+  }, []);
 
   if (connected) return then;
   return (

@@ -1,0 +1,10 @@
+.Light {
+  background-color: antiquewhite;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1px;
+}

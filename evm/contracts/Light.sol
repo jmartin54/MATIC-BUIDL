@@ -15,16 +15,16 @@ contract Light is ERC721 {
   
   // Colors
   event UpdatedColor(uint x, uint y, uint z,uint color, address updater);
-  function setColor(uint _x, uint _y, uint _z,uint _color) {
+  function setColor(uint _x, uint _y, uint _z,uint _color) public {
     light[_x][_y][_z].color = _color;
     emit UpdatedColor(_x, _y, _z, _color, msg.sender);
   }
 
   // Minting
   event Minted(uint x, uint y, uint z, address minter);
-  function mint(uint _x, uint _y, uint _z, uint _color, address _owner) {
-    light[_x][_y][_z] = LightInfo(msg.sender, _color);
-    emit Minted(_x, _y, _z, msg.sender);
+  function mint(uint _x, uint _y, uint _z, uint _color, address _owner) public {
+    light[_x][_y][_z] = LightInfo(_owner, _color);
+    emit Minted(_x, _y, _z, _owner);
   }
 
 }

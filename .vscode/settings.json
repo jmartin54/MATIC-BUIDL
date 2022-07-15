@@ -1,0 +1,4 @@
+{
+  "solidity.defaultCompiler": "localNodeModule",
+  "solidity.packageDefaultDependenciesDirectory": "/Users/joshuamartin/22/lights/evm/node_modules"
+}

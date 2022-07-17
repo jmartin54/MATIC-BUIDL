@@ -1,4 +1,4 @@
-import { SemanticClassificationFormat } from "typescript";
+import { useState } from "react";
 import LightContract, {
   LightContractStates,
   LightInfo,
@@ -14,15 +14,7 @@ export default function Light(params: LightParams) {
   const { state, info, mint, setColor } = LightContract({ x, y });
 
   if (state == LightContractStates.loading) return <_Loading {...params} />;
-  if (!info?.minted)
-    return (
-      <_Mintable
-        mint={(color) => {
-          mint(color);
-          //   console.log("#" + color.toString(16));
-        }}
-      />
-    );
+  if (!info?.minted) return <_Mintable mint={mint} />;
   return <_Settable info={info} setColor={setColor} />;
 }
 
@@ -56,16 +48,13 @@ type _SettableParams = {
   setColor: (color: number) => void;
 };
 function _Settable({ info, setColor }: _SettableParams) {
+  const [style, setStyle] = useState({ background: info.color });
   const handleClick = () => colorPrompt(setColor);
+
   return (
-    <div
-      className="Light"
-      style={{
-        background: info?.color,
-      }}
-      onClick={handleClick}
-    >
+    <div className="Light" style={style} onClick={handleClick}>
       <p>minty</p>
+      <small>{info.color}</small>
     </div>
   );
 }

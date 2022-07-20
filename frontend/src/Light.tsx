@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { MouseEventHandler, useState } from "react";
 import LightContract, {
   LightContractStates,
   LightInfo,
@@ -55,6 +55,7 @@ function _Settable({ info, setColor }: _SettableParams) {
     <div className="Light" style={style} onClick={handleClick}>
       <p>minty</p>
       <small>{info.color}</small>
+      <SimpleiFrame color={info.color} />
     </div>
   );
 }
@@ -74,3 +75,39 @@ const colorPrompt = (callWithColor: (color: number) => void) => {
   else if (isNaN(color)) alert("Invalid hex code");
   else callWithColor(color);
 };
+
+function SimpleiFrame({ color }: { color: string }) {
+  const [showiFrame, setShowiFrame] = useState(false);
+  const handleiFrameClick: MouseEventHandler<HTMLButtonElement> = (e) => {
+    e.stopPropagation();
+    setShowiFrame(true);
+  };
+  const iFrameStyles = {
+    backgroundColor: color,
+    display: showiFrame ? "" : "none",
+  };
+  return (
+    <>
+      <button onClick={handleiFrameClick}>show iFrame</button>
+      <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          ...iFrameStyles,
+        }}
+        onClick={(e) => {
+          e.stopPropagation();
+          setShowiFrame(false);
+        }}
+      >
+        <iframe
+          style={{ width: "90%", height: "90%", margin: "5%" }}
+          src="http://www.joshmartin.dev"
+        ></iframe>
+      </div>
+    </>
+  );
+}

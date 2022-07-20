@@ -17,4 +17,17 @@ Hours	Start	End		Description
 5.5
 
 
+Sunday 
 1.0	9:00am 10:00am		Rerender after events
+
+Monday
+0.0	5:45pm	0:00pm		Add iFrame
+
+
+
+Light
+6 data for each NFT
+0 uses first 6 bytes for color
+1 uses data as iFrame url
+2-5 future use cases
+

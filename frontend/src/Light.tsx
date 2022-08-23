@@ -53,7 +53,7 @@ function _Settable({ info, setColor }: _SettableParams) {
 
   return (
     <div className="Light" style={style} onClick={handleClick}>
-      <p>minty</p>
+      <p>message</p>
       <small>{info.color}</small>
       <SimpleiFrame color={info.color} />
     </div>

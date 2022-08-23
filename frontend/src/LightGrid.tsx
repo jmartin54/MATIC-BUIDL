@@ -3,7 +3,7 @@ import "./LightGrid.css";
 
 export default function LightGrid() {
   const grid = [];
-  for (let y = 0; y < 3; y++) {
+  for (let y = 0; y < 4; y++) {
     const row = [];
     for (let x = 0; x < 5; x++) {
       row.push(<Light key={x} x={x} y={y} />);

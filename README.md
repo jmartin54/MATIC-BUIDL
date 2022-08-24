@@ -9,6 +9,7 @@ Deployed to the mumbai testnet at: 0x854F5B53ce5960e1c9485BdEE2fa72062d2b06Ea
 - Submission overview (idea, progress, vision)
 - The road ahead (1m, 3m, how I'd use $50k)
 - Folders (pixel-demo, pixel, onboarding-v3, spaghetti)
+- Post hackathon progress (sequence)
 
 # Submission Overview
 
@@ -81,6 +82,10 @@ _I've used it to get a sense of how people understand, and respond to, the overa
 
 This folder is a step-by-step walkthrough of the idea. I've gotten much better feedback on the UX of this page. A lot of people that otherwise don't understand NFTs see the value in controlling a billboard in the real world.
 
+**sequence**
+(completed post hackathon)
+I added a demo of pixel minting and color changing that uses the sequence wallet instead of metamask. Very impressed with how easy it was to do.
+
 **My stack:**
 
 I put smart contracts into an evm folder. I've mostly used truffle, but switched to hardhat when some deploy scripts failed to work on the mumbai test net.
@@ -90,7 +95,18 @@ I put the react projects into a frontend folder.
 The 3D elements are ThreeJs with custom shaders in some places.
 
 **Spaghetti**
+
 These repos act like scratch paper for me to rapidly test ideas with users and make sure things are working. They are messy in places. There is unused code in others. I don't mind this because it allows me to get feedback without feeling attached to my codebase.
 
 When I pull the codebases together I'll follow more normal design patterns.
 _But if no one ever uses your product, your code doesn't matter.. First things first._
+
+# Post Hackathon Progress
+
+I'm still actively working this, even though I missed the deadline. I want you to see the progress I continue to make, but want to be honest about what was and was not done in time.
+
+**Sequence integration**
+
+I added a demo of pixel minting and color setting that uses the sequence wallet instead of metamask. I want to use sequence in the mainnet version so that users with no crypto experience can seamlessly go from signup to add funds to use funds.
+
+It only took me a few hours to build this demo. Very impressed with sequence so far!

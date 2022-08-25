@@ -4,6 +4,9 @@ Submission for the MATIC BUIDL hackathon
 
 Deployed to the mumbai testnet at: 0x854F5B53ce5960e1c9485BdEE2fa72062d2b06Ea
 
+You can view the sequence demo (finished after the hackathon) at this link. Make sure to enable testnet before logging in with sequence.
+https://www.joshmartin.dev/sequence-integration/
+
 **TOC**
 
 - Submission overview (idea, progress, vision)
